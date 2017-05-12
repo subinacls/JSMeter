@@ -8,7 +8,9 @@
 ```
 ### JavaScript Reversed TCP Meterpreter Stager - by Cn33liz 2017
 CSharp Meterpreter Stager build by Cn33liz and embedded within JavaScript using DotNetToJScript from James Forshaw
-Should work on x86 as well as x64
+https://github.com/tyranid/DotNetToJScript
+
+This Stager should work on x86 as well as x64
 
 ```
 Usage:
