@@ -10,7 +10,7 @@
 CSharp Meterpreter Stager build by Cn33liz and embedded within JavaScript using DotNetToJScript from James Forshaw
 https://github.com/tyranid/DotNetToJScript
 
-This Stager should work on x86 as well as x64
+This Stager should run on x86 as well as x64
 
 ```
 Usage:
