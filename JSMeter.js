@@ -14,8 +14,8 @@ Usage:
 Change RHOST and RPORT to suit your needs:
 */
 
-var RHOST = "172.16.97.1";
-var RPORT = "443";
+var RHOST = "192.168.100.118";
+var RPORT = "5443";
 
 /*
 Start Msfconsole:
